@@ -10,14 +10,13 @@ const modal = () => {
   const openHeaderModal = () => {
     headerModal.style.display = 'block';
     overlay.style.display = 'block';
-  }
-
+  };
 
   body.addEventListener('click', (e) => {
-    e.preventDefault();
     if (!e.target.closest('a.btn-block')) {
       return;
     }
+    e.preventDefault();
     openHeaderModal();
   });
 
