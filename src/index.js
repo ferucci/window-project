@@ -7,4 +7,4 @@ import timerForms from './modules/timer';
 modalPhone();
 advSlider();
 ourServices();
-timerForms();
+timerForms('20 may 2022');
