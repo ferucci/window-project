@@ -13,23 +13,23 @@ const ourServicesSlider = () => {
     sliderItems[1].classList.remove('services__item--active');
   }
 
-  const prevSlide = (elems, id, strClass) => {
-    sliderItems[currentSlide].classList.remove(strClass);
+  const prevSlide = () => {
+    sliderItems[currentSlide].classList.remove('services__item--active');
     currentSlide--;
-    if (currentSlide < sliderItems.length) {
-      currentSlide = 0;
+    if (currentSlide < 0) {
+      currentSlide = sliderItems.length;
     }
-    sliderItems[currentSlide].classList.add(strClass);
+    sliderItems[currentSlide].classList.add('services__item--active');
   }
 
-  const nextSlide = (elems, id, strClass) => {
-    sliderItems[currentSlide].classList.remove(strClass);
+  const nextSlide = () => {
+    sliderItems[currentSlide].classList.remove('services__item--active');
     currentSlide++;
 
     if (currentSlide >= sliderItems.length) {
       currentSlide = 0;
     }
-    sliderItems[currentSlide].classList.add(strClass);
+    sliderItems[currentSlide].classList.add('services__item--active');
   }
 
   const toggleClass = () => {
