@@ -35,7 +35,6 @@ const ourServicesSlider = () => {
   const toggleClass = () => {
     sliderItems.forEach((item, index) => {
       sliderItems[index].classList.toggle('services__item--active');
-      console.log(sliderItems[index]);
     });
   }
 

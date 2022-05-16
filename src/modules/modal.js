@@ -1,28 +1,35 @@
 'use strict';
 
 const modal = () => {
-  // const btnCall = document.querySelector('div.button>a');
   const headerModal = document.querySelector('.header-modal');
+  const servicesModal = document.querySelector('.services-modal');
   const overlay = document.querySelector('.overlay');
-  // const modalCloseBtn = document.querySelector('.header-modal__close');
   const body = document.querySelector('body');
 
-  const openHeaderModal = () => {
-    headerModal.style.display = 'block';
+  const openModal = (item) => {
+    item.style.display = 'block';
     overlay.style.display = 'block';
   };
 
   body.addEventListener('click', (e) => {
-    if (!e.target.closest('a.btn-block')) {
-      return;
+    if (e.target.closest('a.btn-block')) {
+      e.preventDefault();
+      openModal(headerModal);
+    } else if (e.target.closest('.service-button')) {
+      openModal(servicesModal);
     }
-    e.preventDefault();
-    openHeaderModal();
+    return;
+
   });
 
   body.addEventListener('click', (e) => {
-    if (e.target.closest('.header-modal__close') || e.target.closest('.overlay')) {
+    if (e.target.closest('.header-modal__close') || e.target.closest('.overlay') &&
+      headerModal.style.display == 'block') {
       headerModal.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+    else if (e.target.closest('.services-modal__close') || e.target.closest('.overlay')) {
+      servicesModal.style.display = 'none';
       overlay.style.display = 'none';
     }
     return;
