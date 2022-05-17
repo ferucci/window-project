@@ -1993,10 +1993,12 @@ input.error {
 }
 
 .smooth-scroll {
+  opacity: 0;
   position: fixed;
   right: 25px;
   bottom: 25px;
   transform: rotate(90deg);
+  transition: all .7s;
 }
 
 @media (min-width: 576px) {

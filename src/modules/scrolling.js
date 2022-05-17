@@ -1,12 +1,33 @@
 'use strict';
 
 const scrolling = () => {
+
   // Реализовать бургер
+
   const btnScrollUp = document.querySelector('.smooth-scroll');
 
-  btnScrollUp.addEventListener('click', (e) => {
-    scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  const scrollArea = () => {
+
+    let scroll = window.pageYOffset
+    let mainScreenHeight = document.documentElement.clientHeight
+
+    console.log(scroll)
+    if (scroll > mainScreenHeight) {
+      btnScrollUp.style.opacity = 1;
+    } else {
+      btnScrollUp.style.opacity = 0;
+    }
+  }
+
+  const backToTop = () => {
+    if (window.pageYOffset > 0) {
+      window.scrollBy(0, -70);
+      setTimeout(backToTop, 0);
+    }
+  }
+
+  window.addEventListener('scroll', scrollArea);
+  btnScrollUp.addEventListener('click', backToTop);
 }
 
 export default scrolling;
