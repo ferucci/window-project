@@ -1,17 +1,35 @@
 
-import modalPhone from './modules/modal';
+import modal from './modules/modal';
 import advSlider from './modules/slider';
 import ourServices from './modules/sliderServices';
 import timerForms from './modules/timer';
 import validForms from './modules/validate';
 import sendForm from './modules/sendForm';
 import scrolling from './modules/scrolling';
+import calc from './modules/calc';
 
-modalPhone();
+modal();
 advSlider();
 ourServices();
+scrolling();
+calc(300);
 timerForms('20 may 2022');
 validForms();
-scrolling();
-sendForm({ formsEl: 'form[name="action-form2"]' });
-sendForm({ formsEl: 'form[name="action-form"]' });
+sendForm({
+  formsEl: 'form[name="action-form2"]',
+  calcElem: [
+    {
+      type: 'input',
+      id: 'calc-total'
+    }
+  ]
+});
+sendForm({
+  formsEl: 'form[name="action-form"]',
+  calcElem: [
+    {
+      type: 'input',
+      id: 'calc-total'
+    }
+  ]
+});

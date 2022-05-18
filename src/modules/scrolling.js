@@ -7,11 +7,9 @@ const scrolling = () => {
   const btnScrollUp = document.querySelector('.smooth-scroll');
 
   const scrollArea = () => {
-
     let scroll = window.pageYOffset
     let mainScreenHeight = document.documentElement.clientHeight
 
-    console.log(scroll)
     if (scroll > mainScreenHeight) {
       btnScrollUp.style.opacity = 1;
     } else {
