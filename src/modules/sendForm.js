@@ -38,13 +38,15 @@ const sendForms = ({ formsEl, calcElem = [] }) => {
     const formData = new FormData(form);
     const formBody = {};
 
-    calcElem.forEach(elem => {
-      const element = document.getElementById(elem.id);
+    if (calcElem.value) {
+      calcElem.forEach(elem => {
+        const element = document.getElementById(elem.id);
 
-      if (elem.type === 'input' && element.value !== '' && element.value !== '0') {
-        formBody[elem.id] = element.value;
-      }
-    })
+        if (elem.type === 'input' && element.value !== '' && element.value !== '0') {
+          formBody[elem.id] = element.value;
+        }
+      })
+    }
 
     statusBlock.textContent = loadText;
     form.append(statusBlock);

@@ -7,13 +7,15 @@ import validForms from './modules/validate';
 import sendForm from './modules/sendForm';
 import scrolling from './modules/scrolling';
 import calc from './modules/calc';
+import modalMagnification from './modules/modal-magnification';
 
 modal();
 advSlider();
 ourServices();
 scrolling();
 calc(300);
-timerForms('20 may 2022');
+modalMagnification();
+timerForms('1 june 2022');
 validForms();
 sendForm({
   formsEl: 'form[name="action-form2"]',

@@ -3,6 +3,7 @@
 import { animate } from './helpers';
 
 const calc = (price) => {
+  const body = document.querySelector('.okna');
   const calcBlock = document.getElementById('calc');
   const balcony = document.getElementById('calc-type');
   const glazingType = document.getElementById('calc-type-material');
@@ -50,7 +51,14 @@ const calc = (price) => {
     });
   }
 
-  calcBlock.addEventListener('change', (e) => countCalc());
+  if (document.body.closest('.balkony')) {
+
+    calcBlock.addEventListener('change', (e) => {
+      countCalc();
+    });
+
+  }
+
 }
 
 export default calc
