@@ -947,6 +947,21 @@ p.services-image_mobile {
   opacity: 0;
 }
 
+.modal-img {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 90%;
+  height: 80vh;
+  animation-name: tada;
+  animation-duration: .4s;
+  z-index: 999;
+}
+
 .document-inner:hover .document-overlay {
   opacity: 1;
   transition: opacity 0.3s linear;
