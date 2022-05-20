@@ -6,6 +6,8 @@ const imageMagnification = () => {
   const overlayItem = document.querySelectorAll('.document-overlay');
   const overlayBlock = document.querySelector('.overlay');
 
+  let currentSlide = 0;
+
   imagesCollection.forEach((img, index) => {
 
     img.classList.add('document-inner');
@@ -14,12 +16,20 @@ const imageMagnification = () => {
       e.preventDefault();
 
       const target = e.target.closest('.sertificate-document');
-      const imageV = `<div class="modal-img__inner">
+      const imageV = `<div class="modal-img__inner"><div>
       <img class="modal-img" style="border-radius:20px;" src="${target}">
-      </div>`;
+      </div></div>`;
 
       if (e.target.closest('.modal-img')) {
-        return;
+        document.querySelectorAll('.modal-img__inner').forEach(item => {
+          item.remove()
+          currentSlide++;
+
+          if (currentSlide >= imagesCollection.length) {
+            currentSlide = 0
+          }
+          imagesCollection[currentSlide].innerHTML += imageV;
+        })
 
       } else if (e.target.closest('.modal-img__inner')) {
         document.querySelectorAll('.modal-img__inner').forEach(item => {

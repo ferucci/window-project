@@ -959,6 +959,10 @@ p.services-image_mobile {
   z-index: 999;
 }
 
+.modal-img:hover {
+  background: #000;
+}
+
 .modal-img {
   max-width: 90%;
   height: 80vh;
