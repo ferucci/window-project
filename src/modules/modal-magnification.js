@@ -14,10 +14,18 @@ const imageMagnification = () => {
       e.preventDefault();
 
       const target = e.target.closest('.sertificate-document');
-      const imageV = `<img class="modal-img" style="border-radius:20px;" src="${target}">`;
+      const imageV = `<div class="modal-img__inner">
+      <img class="modal-img" style="border-radius:20px;" src="${target}">
+      </div>`;
 
       if (e.target.closest('.modal-img')) {
         return;
+
+      } else if (e.target.closest('.modal-img__inner')) {
+        document.querySelectorAll('.modal-img__inner').forEach(item => {
+          item.remove();
+          overlayBlock.style.display = 'none';
+        })
       } else if (img === target) {
 
         overlayItem.forEach((item, id) => {
@@ -33,14 +41,6 @@ const imageMagnification = () => {
     });
 
   });
-
-  overlayBlock.addEventListener('click', () => {
-    document.querySelectorAll('.modal-img').forEach(item => {
-      item.remove();
-    })
-  });
-
-
 
 }
 
