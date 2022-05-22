@@ -18,10 +18,28 @@ modalMagnification();
 timerForms('1 june 2022');
 validForms();
 sendForm({
+  formsEl: 'form[name="callback-form"]',
+  calcElem: [
+    {
+      type: 'number',
+      id: 'calc-total'
+    }
+  ]
+});
+sendForm({
+  formsEl: 'form[name="application-form"]',
+  calcElem: [
+    {
+      type: 'number',
+      id: 'calc-total'
+    }
+  ]
+});
+sendForm({
   formsEl: 'form[name="action-form2"]',
   calcElem: [
     {
-      type: 'input',
+      type: 'number',
       id: 'calc-total'
     }
   ]
@@ -30,8 +48,9 @@ sendForm({
   formsEl: 'form[name="action-form"]',
   calcElem: [
     {
-      type: 'input',
+      type: 'number',
       id: 'calc-total'
     }
   ]
 });
+

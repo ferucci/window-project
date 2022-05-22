@@ -23,8 +23,8 @@ const validForms = () => {
 
       if (input === input.closest('input[name="fio"]')) {
         input.addEventListener('blur', (e) => {
-          e.target.value = e.target.value.replace(/(?:^|\s|[-"'([{])+\S/g, (str) => str.toUpperCase()).replace(/[^а-яА-ЯёЁA-Za-z\-\s]/g, '').replace(/\s+/g, ' ');
-          if (/[а-яА-Я]/g.test(input.value) || /[A-Za-z]/g.test(input.value)) {
+          e.target.value = e.target.value.replace(/(?:^|\s|[-"'([{])+\S/g, (str) => str.toUpperCase()).replace(/[^а-яА-ЯёЁ\-\s]/g, '').replace(/\s+/g, ' ');
+          if (/[а-яА-Я]/g.test(input.value)) {
             addClass(input);
             if (errorText) {
               errorText.remove();

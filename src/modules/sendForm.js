@@ -6,7 +6,7 @@ const sendForms = ({ formsEl, calcElem = [] }) => {
 
   const loadText = 'Загрузка';
   const errorText = 'Ошибка';
-  const successText = 'Данные отправлены. Наш менеджер с вами свяжится в ближайшее время.'
+  const successText = 'Данные отправлены. Наш менеджер с вами свяжится в ближайшее время.';
 
   const valid = (list) => {
     let success = true;
@@ -38,11 +38,11 @@ const sendForms = ({ formsEl, calcElem = [] }) => {
     const formData = new FormData(form);
     const formBody = {};
 
-    if (calcElem.value) {
+    if (document.body.classList.contains('balkony')) {
       calcElem.forEach(elem => {
         const element = document.getElementById(elem.id);
 
-        if (elem.type === 'input' && element.value !== '' && element.value !== '0') {
+        if (elem.type === 'number' && element.value !== null && element.value !== 0 && element.value !== '') {
           formBody[elem.id] = element.value;
         }
       })
