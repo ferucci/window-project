@@ -5,7 +5,9 @@ const reviews = () => {
   const reviewsBlock = document.querySelector('.comments-container');
   const reviewsItem = document.querySelectorAll('.comment-item');
 
-  const reviewInner = reviewsSection.querySelector('.comments-container');
+  let reviewInner = reviewsSection.querySelector('.comments-container');
+
+  let block = document.createElement('div')
   let userInner;
   let interval = 20000
   let intervalId
@@ -117,12 +119,12 @@ const reviews = () => {
 
 
   document.addEventListener('DOMContentLoaded', () => {
-    let block = document.createElement('div')
+    reviewInner = reviewsSection.querySelector('.comments-container');
+    block = document.createElement('div')
     block.style.width = '100%'
     block.innerHTML = '<img src="./images/Spin-0.8s-200px.gif" style="display: block; width: 25%; text-align: center; margin: 0 auto;" alt="" />';
     reviewInner.append(block)
     innHtml()
-    block.remove()
   }, false)
 
   const innHtml = () => {

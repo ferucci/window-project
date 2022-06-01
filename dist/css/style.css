@@ -803,11 +803,6 @@ p.services-image_mobile {
   background: url("../images/review-bg.png");
 }
 
-/* .comment-item:nth-child(even) .col-xs-9 {
-  float: right;
-  color: rebeccapurple;
-} */
-
 .review-inner {
   position: relative;
   padding: 18px;

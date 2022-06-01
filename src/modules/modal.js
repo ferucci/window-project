@@ -6,6 +6,10 @@ const modal = () => {
   const overlay = document.querySelector('.overlay');
   const body = document.querySelector('body');
 
+  const refurbishmentModal = document.querySelector('#order');
+  const utpButton = document.querySelector('a[href="#order"]');
+
+
   const openModal = (item) => {
     item.style.display = 'block';
     overlay.style.display = 'block';
@@ -17,6 +21,9 @@ const modal = () => {
       openModal(headerModal);
     } else if (e.target.closest('.service-button')) {
       openModal(servicesModal);
+    } else if (e.target === utpButton) {
+      openModal(refurbishmentModal)
+      refurbishmentModal.style.cssText = `display: block;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 999;`
     }
     return;
 
@@ -31,6 +38,10 @@ const modal = () => {
     else if (e.target.closest('.services-modal__close') || e.target.closest('.overlay')) {
       servicesModal.style.display = 'none';
       overlay.style.display = 'none';
+      if (refurbishmentModal) {
+        refurbishmentModal.style.display = 'none';
+      }
+
     }
     return;
   });
