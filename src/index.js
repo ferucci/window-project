@@ -8,6 +8,7 @@ import sendForm from './modules/sendForm';
 import scrolling from './modules/scrolling';
 import calc from './modules/calc';
 import modalMagnification from './modules/modal-magnification';
+import reviews from './modules/reviews';
 
 modal();
 advSlider();
@@ -15,7 +16,8 @@ ourServices();
 scrolling();
 calc(300);
 modalMagnification();
-timerForms('1 june 2022');
+reviews();
+timerForms('10 june 2022');
 validForms();
 sendForm({
   formsEl: 'form[name="callback-form"]',

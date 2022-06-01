@@ -803,6 +803,11 @@ p.services-image_mobile {
   background: url("../images/review-bg.png");
 }
 
+/* .comment-item:nth-child(even) .col-xs-9 {
+  float: right;
+  color: rebeccapurple;
+} */
+
 .review-inner {
   position: relative;
   padding: 18px;
@@ -966,7 +971,7 @@ p.services-image_mobile {
 .modal-img {
   max-width: 90%;
   height: 80vh;
-  animation-name: tada;
+  animation-name: bounceInLeft;
   animation-duration: .4s;
 }
 
@@ -1123,6 +1128,14 @@ p.services-image_mobile {
   margin-left: 146px;
   line-height: 1.3;
   padding-top: 40px;
+}
+
+.footer__title-sign {
+  font-family: 'Tiro Gurmukhi', serif;
+  font-size: 16px;
+  letter-spacing: .05em;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .animated {
@@ -1296,6 +1309,16 @@ p.services-image_mobile {
   height: 44px;
   border-radius: 10px;
   background: #000 url("../images/loading.gif") no-repeat 50% 50%;
+}
+
+.header-modal .order-call-modal {
+  animation-name: tada;
+  animation-duration: .4s;
+}
+
+.services-modal .order-call-modal {
+  animation-name: bounceIn;
+  animation-duration: .4s;
 }
 
 .box-modal {
@@ -2112,6 +2135,7 @@ input.error {
   bottom: 25px;
   transform: rotate(90deg);
   transition: all .7s;
+  cursor: pointer;
 }
 
 @media (min-width: 576px) {
